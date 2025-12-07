@@ -40,7 +40,7 @@ sql.connect(configDB, (err) => {
 
 
 
-const port = config.port;
+const port = process.env.PORT;
 
 // Swagger definition
 
