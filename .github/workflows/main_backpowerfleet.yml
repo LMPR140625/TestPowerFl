@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Back/
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -61,5 +64,6 @@ jobs:
         with:
           app-name: 'backpowerfleet'
           slot-name: 'Production'
-          package: .
+          package: ./Back/
+
           
