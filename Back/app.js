@@ -60,9 +60,11 @@ app.use(customResponse);
 
 // Routes
 app.use('/api/',loginRoutes);
-//app.use(authMiddleware.authenticateToken)
-app.use('/api/',vehicleRoutes);
 
+app.use('/api/',vehicleRoutes);
+app.get("/", (req, res) => {
+    res.send("Hello, World lililililililililili!!");
+});
 /*
 app.all('*',(req,res,next) => {
   next(new AppError(`No se puede encontrar ${req.originalUrl} en este servidor`,404));

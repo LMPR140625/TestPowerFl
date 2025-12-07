@@ -14,7 +14,7 @@ async function apiFetch(endpoint, options = {}) {
   // Encabezados predeterminados, como para JSON y autenticación
   const defaultHeaders = {
     'Content-Type': 'application/json',
-    'authorization': `Bearer ${token}` // Ejemplo de autenticación
+    //'authorization': `Bearer ${token}` // Ejemplo de autenticación
   };
 
   if (token) {
