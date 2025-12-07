@@ -22,7 +22,7 @@ const configDB = {
   database: process.env.SQLSERVER_DATABASE,
   options: {
     // THIS IS VERY IMPORTANT - Public endpoint is 3342, default is 1443
-    port: 2504, 
+    port: 1433, 
     encrypt: true,
     trustServerCertificate: true
   },

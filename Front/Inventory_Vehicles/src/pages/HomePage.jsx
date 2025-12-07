@@ -36,7 +36,7 @@ const HomePage = () =>{
                 <Title title={'Bienvenido '  } icon={<FontAwesomeIcon className='text-5xl text-white
                 ' icon='fa-solid fa-door-open'  />}/>
 
-                <div className="grid  pt-40">
+                <div className="grid  pt-40" data-aos="fade-rigth">
                    <div className=" grid-cols-3">
                         <button onClick={handleNew} className="border text-5xl text-white h-35 w-70 mr-15  border-gray-300 bg-cyan-600 hover:bg-white  hover:text-cyan-600 placeholder:text-cyan-600 rounded-md shadow-lg shadow-cyan-600 '">
                             <FontAwesomeIcon className='text-5xl 

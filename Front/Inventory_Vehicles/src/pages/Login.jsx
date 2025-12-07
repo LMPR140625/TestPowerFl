@@ -75,7 +75,7 @@ const Login = () => {
           id='NameUser'
           value={NameUser} 
           onChange={(e) => setNameUser(e.target.value)} 
-          required 
+           
         />
       </div>
 
@@ -85,14 +85,13 @@ const Login = () => {
         <input className='h-9  border border-gray-300 hover:text-cyan-600 placeholder:text-cyan-600 rounded-md shadow-lg shadow-cyan-600 
         focus:outline-none focus:ring-cyan-600 focus:border-cyan-600 sm:text-sm' placeholder='Contraseña'
           type="password" 
-           id='PassHash'
+          id='PassHash'
           value={PassHash} 
           onChange={(e) => setPassHash(e.target.value)} 
-          required 
         />
       </div>
       
-      <button className='mt-7 border rounded-full w-35 h-10 font-bold border-gray-300  text-white  shadow-lg shadow-cyan-600 
+      <button className='mt-7 cursor-pointer border rounded-full w-35 h-10 font-bold border-gray-300  text-white  shadow-lg shadow-cyan-600 
         focus:outline-none focus:ring-cyan-600 focus:border-cyan-600 sm:text-sm bg-cyan-700 hover:text-cyan-700 hover:bg-white' type="submit" disabled={isLoading}>
         {isSpinner ? 'Iniciando ...' : 'Iniciar Sersión '}
       </button>

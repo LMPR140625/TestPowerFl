@@ -106,7 +106,7 @@ const TableSelectionComponent = (props) => {
       
     return(  
         <>
-            <div className="flex flex-col pt-10 pb-10">
+            <div className="flex flex-col pt-10 pb-10" data-aos="fade-rigth">
                 {/* Renderizado condicional del modal */}
                 {isModalOpen && (
                     <ConfirmacionComponent

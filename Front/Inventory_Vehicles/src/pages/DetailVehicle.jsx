@@ -91,7 +91,7 @@ const DetailVehicle = () =>{
     };
 
     return(
-        <div className='pb-10'>
+        <div className='pb-10' >
             <Title title={'Detalle del Vehiculo '  } icon={<FontAwesomeIcon className='text-5xl text-white
                 ' icon='fa-solid fa-circle-info'  />}/>
                 <div className='pt-5'>
@@ -99,16 +99,16 @@ const DetailVehicle = () =>{
                                 <AlertComponent  message={mensajeAlerta} type={tipoAlerta}/>
                             ) : null}
                 </div>
-            <div>
+            <div data-aos="fade-rigth">
                 <SearchComponent textHolder='Ingresa el Id del Vehiculo' onClickButton={searchVehicleId} onInputChange={handleInputChange}/>
             </div>
 
-            <div className="grid grid-cols-3 pt-5">
+            <div className="grid grid-cols-3 pt-5" data-aos="fade-rigth">
                 <CardComponent field='Marca' icon="fa-solid fa-copyright" body={<p className="text-7xl font-bold">{vehicleId.BRAND} </p>}/>
                 <CardComponent field='Modelo' icon="fa-solid fa-hexagon-nodes" body={<p className="text-7xl font-bold">{vehicleId.MODEL} </p>}/>
                 <CardComponent field='Año' icon="fa-solid fa-calendar-plus" body={<p className="text-7xl font-bold">{vehicleId.YEEAR}  </p>}/>
             </div>
-            <div className="grid grid-cols-2 pt-10">
+            <div className="grid grid-cols-2 pt-10" data-aos="fade-rigth">
                 <CardComponent field='Placa' icon="fa-solid fa-id-card-clip" body={<p className="text-7xl font-bold">{vehicleId.PLATE}  </p>}/>
                 <CardComponent field='Estado' icon="fa-solid fa-signal" status={vehicleId.STATEID} body={<p className="text-7xl font-bold"></p>}/>
             </div>

@@ -8,7 +8,7 @@ const TableVehicles = () =>{
         <>
             <Title title={'Inventario de Vehículos '  } icon={<FontAwesomeIcon className='text-5xl text-white
                 ' icon='fa-solid fa-list-check'  />}/>
-            <TableSelectionComponent />
+            <TableSelectionComponent  />
         </>
     )
 };

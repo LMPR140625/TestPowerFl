@@ -101,25 +101,42 @@ const FormNewVehicle = () =>{
         // Simula una carga
         //await delay(1000);
         
-        
-        const res = await apiClient.put('/vehicleId', {body: vehicle});
-        
-        setVehicle({});
-        
-        if(res.status == 'error'){
+        if(vehicle.id == ":0") {
+            const resPost = await apiClient.post('/vehicle', {body: vehicle});
+            if(resPost.status == 'error'){
             setIsShowAlert(true)
             setMensajeAlerta('Existió un problema al validar el vehiculo, intenta de nuevo');
             setTipoAlerta('error');
             console.log('Problemas con el servidor de bd');
             setisSpinner(false);
 
-        } else if(res.status == 'success'){
+        } else if(resPost.status == 'success'){
             setIsShowAlert(true)
             setMensajeAlerta('Vehiculo Registrado !');
             setTipoAlerta('success');
             setisSpinner(false);
             cleanForm();
-        }        
+        }    
+        } else {
+            const resPut = await apiClient.put('/vehicleId', {body: vehicle});
+            if(resPut.status == 'error'){
+            setIsShowAlert(true)
+            setMensajeAlerta('Existió un problema al validar el vehiculo, intenta de nuevo');
+            setTipoAlerta('error');
+            console.log('Problemas con el servidor de bd');
+            setisSpinner(false);
+
+        } else if(resPut.status == 'success'){
+            setIsShowAlert(true)
+            setMensajeAlerta('Vehiculo Actualizado !');
+            setTipoAlerta('success');
+            setisSpinner(false);
+            cleanForm();
+        }    
+        }
+        setVehicle({});
+        
+            
     }};
 
     const validate = () =>{
@@ -163,7 +180,7 @@ const FormNewVehicle = () =>{
                             ) : null}
                 </div>
 
-                <form className=" px-10 pt-10 pb-10" >
+                <form className=" px-10 pt-10 pb-10" data-aos="fade-rigth">
                     <div className="mb-10 pr-10 ">
                         <InputComponent icon='fa-solid fa-copyright' placeHolder='  Marca:' valor={brand} onInputChange={handleInputBrand}/>
                         {errors.brand && <p style={{ color: 'red' }}>{errors.brand}</p>}
@@ -185,7 +202,7 @@ const FormNewVehicle = () =>{
                         {errors.state && <p style={{ color: 'red' }}>{errors.state}</p>}
                     </div>
 
-                    <button onClick={handleSubmit}   className=" w-100 border mt-5 ssm:mx-60 lg:mx-50 border-gray-300 bg-cyan-600
+                    <button onClick={handleSubmit}   className=" w-100 cursor-pointer border mt-5 ssm:mx-60 lg:mx-50 border-gray-300 bg-cyan-600
                          hover:bg-white hover:text-cyan-800 text-white
                                  placeholder:text-cyan-600 rounded shadow-lg shadow-cyan-600">                                    
                                     <FontAwesomeIcon icon='fa-solid fa-floppy-disk' className='text-2xl  px-2'/>
