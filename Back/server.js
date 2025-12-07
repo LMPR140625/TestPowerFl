@@ -53,7 +53,7 @@ const swaggerOptions = {
       description:'API documentation for VEHICLE API JLPG',
     },
     servers:[{
-      url:`http://localhost:3009`
+      url:`https://backedpf-debxamb2fqfza8gw.mexicocentral-01.azurewebsites.net`
     }],
     components:{
       schema:{
@@ -78,5 +78,5 @@ app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 
 http.createServer(app).listen(port, () => {
   console.log(`Node.js app listening on  port ${port}`);
-  console.log(`Swagger UI available at http://localhost:${port}/api-docs`);
+  console.log(`Swagger UI available at https://backedpf-debxamb2fqfza8gw.mexicocentral-01.azurewebsites.net/api-docs`);
 });

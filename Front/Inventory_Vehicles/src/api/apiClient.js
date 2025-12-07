@@ -1,5 +1,5 @@
 //const API_BASE_URL = 'http://localhost:3009/api';
-const API_BASE_URL = 'https://bachpf-cshpgha6g8egekbs.mexicocentral-01.azurewebsites.net/api';
+const API_BASE_URL = 'https://backedpf-debxamb2fqfza8gw.mexicocentral-01.azurewebsites.net/api';
 
 /**
  * Función genérica para realizar peticiones HTTP.

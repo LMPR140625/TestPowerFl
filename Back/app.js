@@ -44,7 +44,7 @@ app.use(hpp());
 
 // Habilitación de cors
 const corsOptions = {
-  origin: ['http://localhost:5173','https://bachpf-cshpgha6g8egekbs.mexicocentral-01.azurewebsites.net'], // Specify allowed origins
+  origin: ['https://green-pebble-0de6a5b0f.3.azurestaticapps.net'], // Specify allowed origins
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
