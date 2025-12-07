@@ -7,7 +7,7 @@ import http from 'http';
 import config from './config/config.js';
 import swaggerJSDoc from 'swagger-jsdoc'; 
 import swaggerUi from 'swagger-ui-express'
-import vehicle from './models/vehicleModel.js';
+
 import sql from 'mssql';
 
 

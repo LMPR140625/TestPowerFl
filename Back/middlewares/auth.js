@@ -2,8 +2,11 @@
 import  jwt  from 'jsonwebtoken';
 import bcrypt  from 'bcryptjs';
 import { validateUser } from '../services/loginService.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 // Define tu secreto de firma (guárdalo en variables de entorno en producción)
-const secretKey = 'tu_clave_secreta_super_segura'; 
+const secretKey = process.env.TOKEN_JWT; 
 
 const generateToken = async (username, password) => {
   const user = await validateUser(username, password);

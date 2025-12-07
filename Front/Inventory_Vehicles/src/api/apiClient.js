@@ -1,5 +1,4 @@
-//const API_BASE_URL = 'http://localhost:3009/api';
-const API_BASE_URL = 'https://backedpf-debxamb2fqfza8gw.mexicocentral-01.azurewebsites.net/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 /**
  * Función genérica para realizar peticiones HTTP.

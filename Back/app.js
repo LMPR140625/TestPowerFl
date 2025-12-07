@@ -44,13 +44,13 @@ app.use(hpp());
 
 // Habilitación de cors
 const corsOptions = {
-  origin: ['https://green-pebble-0de6a5b0f.3.azurestaticapps.net'], // Specify allowed origins
+  origin: ['https://green-pebble-0de6a5b0f.3.azurestaticapps.net','http://localhost:5173/'], // Specify allowed origins
   optionsSuccessStatus: 200 // For legacy browser support
 };
 
 
 // Prod
-app.use(cors(corsOptions)); // Enable CORS with specified options
+app.use(cors()); // Enable CORS with specified options
 
 // Registro de peticion logs
 app.use(morgan('dev'));
@@ -59,12 +59,12 @@ app.use(morgan('dev'));
 app.use(customResponse);
 
 // Routes
-app.use('/api/',loginRoutes);
+app.use('/api',loginRoutes);
 
-app.use('/api/',vehicleRoutes);
+app.use('/api',vehicleRoutes);
 app.get("/", (req, res) => {
-    res.send("Hello, World lililililililililili!!");
-});
+    res.send("Hello, World !!!!!!!!!");
+}); 
 /*
 app.all('*',(req,res,next) => {
   next(new AppError(`No se puede encontrar ${req.originalUrl} en este servidor`,404));
