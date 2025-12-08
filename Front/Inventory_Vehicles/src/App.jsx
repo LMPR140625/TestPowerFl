@@ -54,7 +54,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
     <Routes>
       <Route path='/login' element={<Login/>} />
-      <Route path='/' element={token ?  <MainLayout/> : <Login/>}>
+      <Route path='/' element={<MainLayout/> }>
         <Route index element={<HomePage/>} />
         <Route path='/home' element={<HomePage/>} />
         <Route path='/newVehicle/:vehicleId' element={<FormVehicle/>} />

@@ -37,7 +37,7 @@
 
 ## Descripción 
 </b></h4>
-    <p>Este proyecto full stack es una aplicación para la gestión de inventario de vehiculos que permite a los usuarios crear, leer, actualizar y eliminar registros en una base de datos SQL Sever, con autenticación de token JWT.
+    <p>Este proyecto full stack es una aplicación para la gestión de inventario de vehículos que permite a los usuarios crear, leer, actualizar y eliminar registros en una base de datos SQL Sever, con autenticación de token JWT.
 
 La motivación principal fue crear una solución eficaz para el manejo sensible de los movimientos vehiculares en el inventario asi como sus actualizaciones. El proyecto utiliza las mejores prácticas dentro de las tecnologias 
 de React para la parte de front y NodeJS para el backend respectivamente.
@@ -144,6 +144,9 @@ npm install
 # 4. Instala las dependencias del backend
 cd ../Back
 npm install
+
+# 4. Ejecuta el script dentro de tu BD
+init.db
 ```
 </div>
 </div>
@@ -156,11 +159,51 @@ npm install
 
 ### Estructura del Proyecto
    </b></h4>
-    <p>A continuación se presenta la estructura general del proyecto y su detalle
+    <p>A continuación se presenta la estructura general del proyecto, arquitectura y objetos por cada proyecto
     </p>
   </div>
 
-<div>
+  <div style="text-align:center">
+
+```mermaid
+graph TD
+    %% Definición de componentes principales (nodos) y agrupaciones en Azure
+    subgraph Frontend [Capa de Presentación: React.js]
+        U((Usuario))
+        ReactApp[Aplicación Web React]
+    end
+
+    subgraph Azure_Cloud [Entorno Microsoft Azure]
+        direction TB
+
+        SWA[Azure Static Web Apps]
+        Backend_Service[Azure App Service: Node.js Web API]
+        SQL_DB[(SQL Azure Database)]
+
+        SWA --- Backend_Service
+        Backend_Service --- SQL_DB
+    end
+
+    %% Definición de las interacciones (edges)
+    U -- "Interactúa con" --> ReactApp
+    ReactApp -- "Acceso Público (HTTPS)" --> SWA
+    SWA -- "Llama a la API (Interna)" --> Backend_Service
+    Backend_Service -- "Conexión DB" --> SQL_DB
+    SQL_DB -- "Datos" --> Backend_Service
+    Backend_Service -- "Respuesta JSON" --> SWA
+    SWA -- "Renderiza UI" --> ReactApp
+
+    %% Estilo (opcional)
+    style Frontend fill:#e1f5fe,stroke:#333,stroke-width:2px;
+    style Azure_Cloud fill:#bbdefb,stroke:#0078D4,stroke-width:3px,color:#0078D4;
+    style SWA fill:#ffffff,stroke:#333,stroke-width:1px;
+    style Backend_Service fill:#ffffff,stroke:#333,stroke-width:1px;
+    style SQL_DB fill:#ffffff,stroke:#333,stroke-width:1px;
+```
+
+  </div>
+
+
 
 *   <span style="color: blue;">📂 **/TESTPOWERFL/**</span>: Raiz de Proyecto
 **   <span style="color: gray;">     📁 **/Front/Inventory_Vehicles**</span>: Proyecto de Front end en React
@@ -170,7 +213,7 @@ npm install
 **   <span style="color: gray;">     📁 **/.github/**</span>: Workflows de Front y Back
 ***   <span style="color: green;">        ✅ **/docs/**</span>: Workflows.
 **   <span style="color: gray;">     📁 **/assets/**</span>: Recursos proyecto
-</div>
+
 
 <div>
 

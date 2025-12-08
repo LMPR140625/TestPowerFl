@@ -30,7 +30,7 @@ const Login = () => {
        onSuccess: (res) => {
         if(res.data != null){
           localStorage.setItem('apiToken', res.data);
-          navigate('/home');  // Redirige al usuario a la ruta '/' después del login exitoso
+          navigate('/home');  // Redirige alHOME
         } else  {
           setIsShowAlert(true)
           setMensajeAlerta('Usuario y/o contraseña incorrecta.');
@@ -56,7 +56,7 @@ const Login = () => {
 
   return (
     <>
-    <HeroSection title='Sistema Inventario Vehiculos' description={getDate()}
+    <HeroSection title='Sistema Inventario vehículos' description={getDate()}
      icon={<FontAwesomeIcon className='text-7xl text-[bg-linear-to-r from-gray-100 via-gray-400 to-gray-100]
       ' icon='fa-solid fa-users-gear' />}/>
     <div className='pt-5'>

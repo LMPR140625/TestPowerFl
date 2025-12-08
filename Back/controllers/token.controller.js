@@ -9,7 +9,7 @@ export const login = catchAsync(async (req, res, next) => {
     }
 
     const token = await authenticateToken.generateToken(NameUser, PassHash);
-    console.log("resultado de tokennnnnnn", token)
+
     if(token == null ) res.success(200,null,"Usuario Incorrecto");
     else res.success(200,token,"Login exitoso");
 });

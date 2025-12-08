@@ -26,7 +26,7 @@ const DetailVehicle = () =>{
         const controlador = new AbortController();
         const senal = controlador.signal;
 
-        // Recuperar información del vehiculo
+        // Recuperar información del vehículo
         const fetchVehiculeId = async() => {
             try{
                 const res = await apiClient.post(`/vehicleId`,
@@ -69,7 +69,7 @@ const DetailVehicle = () =>{
         
         if(res == 'error'){
             setIsShowAlert(true)
-            setMensajeAlerta('El Vehiculo con el ID proporcionado no existe prueba con otro');
+            setMensajeAlerta('El vehículo con el ID proporcionado no existe prueba con otro');
             setTipoAlerta('error');
             console.log('Problemas con el servidor de bd');
             setisSpinner(false);
@@ -80,7 +80,7 @@ const DetailVehicle = () =>{
                 STATEID:'---'})
         } else if(res.status == 'success'){
             setIsShowAlert(true)
-            setMensajeAlerta('Vehiculo Encontrado !');
+            setMensajeAlerta('vehículo Encontrado !');
             setTipoAlerta('success');
             setisSpinner(false);
             setVehicleId(res.data[0]);
@@ -92,7 +92,7 @@ const DetailVehicle = () =>{
 
     return(
         <div className='pb-10' >
-            <Title title={'Detalle del Vehiculo '  } icon={<FontAwesomeIcon className='text-5xl text-white
+            <Title title={'Detalle del vehículo '  } icon={<FontAwesomeIcon className='text-5xl text-white
                 ' icon='fa-solid fa-circle-info'  />}/>
                 <div className='pt-5'>
                             {isShowAlert ? (
@@ -100,7 +100,7 @@ const DetailVehicle = () =>{
                             ) : null}
                 </div>
             <div data-aos="fade-rigth">
-                <SearchComponent textHolder='Ingresa el Id del Vehiculo' onClickButton={searchVehicleId} onInputChange={handleInputChange}/>
+                <SearchComponent textHolder='Ingresa el Id del vehículo' onClickButton={searchVehicleId} onInputChange={handleInputChange}/>
             </div>
 
             <div className="grid grid-cols-3 pt-5" data-aos="fade-rigth">

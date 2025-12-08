@@ -24,7 +24,7 @@ const generateToken = async (username, password) => {
   if (!isMatch) {
     return null; // Contraseña incorrecta
   }
-console.log("resultado de isMatch", isMatch)
+
   // Si es válido, crea el token JWT
   const token = jwt.sign(
     // Payload: Datos que quieres almacenar en el token

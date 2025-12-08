@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className="bg-cyan-800 text-white fixed bottom-0 right-0 w-full ">
       <div className="text-center">
-        <p>&copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} PowerFleet Test. Todos los derechos reservados.</p>
         <div className="mt-2">
-          <a href="#" className="mx-2 hover:text-gray-400">Política de Privacidad</a>
-          <a href="#" className="mx-2 hover:text-gray-400">Términos de Servicio</a>
+          <a href="#" className="mx-2 hover:text-gray-400">2025</a>
+          <a href="#" className="mx-2 hover:text-gray-400">Prueba Técnica</a>
         </div>
       </div>
     </div>

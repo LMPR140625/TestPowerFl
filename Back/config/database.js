@@ -2,12 +2,10 @@ import sql from 'mssql';
 import dotenv from 'dotenv';
 
 dotenv.config();
-// TODO: Database configuration
+
 const config = {
   user: process.env.SQLSERVER_USER,
   password: process.env.SQLSERVER_PASSWORD,
-  // Notice public keyword in the connection string 
-  // if you were to host this server on Azure you wouldn't need the public part
   server: 'localhost',
   database: 'main_db',
 };

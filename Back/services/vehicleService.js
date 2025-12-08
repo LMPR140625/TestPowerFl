@@ -1,28 +1,6 @@
 
 import sql from 'mssql';
-// Recuperar ventas
 
-    /**
-     * @swagger
-     * /users:
-     *   get:
-     *     summary: Returns a list of users
-     *     tags: [Users]
-     *     responses:
-     *       200:
-     *         description: A list of users
-     *         content:
-     *           application/json:
-     *             schema:
-     *               type: array
-     *               items:
-     *                 type: object
-     *                 properties:
-     *                   id:
-     *                     type: integer
-     *                   name:
-     *                     type: string
-     */
 export const getAllVehicles = async() =>{
 
     try {
@@ -35,7 +13,7 @@ export const getAllVehicles = async() =>{
 }
 
 export const createVehicle= async(vehicle) => {
-    console.log("VEhiculo",vehicle);
+    
         try {
         // Perform the database insert
         const result = await sql.query`INSERT INTO VEHICLES(BRAND, MODEL, YEEAR, PLATE, STATEID)
@@ -47,12 +25,10 @@ export const createVehicle= async(vehicle) => {
             console.error('Error inserting data:', error);
             return error;
         }
-        //const newSale = await vehicle.create(saleData);
-        
 }
 
 export const updateVehicle= async(vehicle) => {
-    console.log("update",vehicle)
+   
     try {
        const result = await sql.query`UPDATE VEHICLES SET BRAND = ${vehicle.body.brand}, 
         MODEL = ${vehicle.body.model}, YEEAR = ${vehicle.body.year},
@@ -72,7 +48,7 @@ export const updateVehicle= async(vehicle) => {
 }
 
 export const deleteVehicle= async(vehicle) => {
-    console.log("Vehicule",vehicle)
+    
     try {
         // Perform the database insert
         const result = await sql.query`DELETE VEHICLES WHERE ID = ${vehicle.body}`;

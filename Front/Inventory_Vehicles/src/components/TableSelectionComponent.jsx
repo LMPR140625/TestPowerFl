@@ -32,7 +32,7 @@ const TableSelectionComponent = (props) => {
           const controlador = new AbortController();
           const senal = controlador.signal;
           const token = localStorage.getItem('apiToken'); 
-          // Recuperar información del vehiculo
+          // Recuperar información del vehículo
           const fetchVehicules = async() => {
               try{
                   const res = await apiClient.get('/vehicle');
@@ -66,11 +66,11 @@ const TableSelectionComponent = (props) => {
 
     // 2. Manejador de confirmación: Realiza la eliminación real
     const handleConfirmDelete = async() => {
-        console.log(`Eliminando vehiculo con ID: ${vehicleId}`);
+        console.log(`Eliminando vehículo con ID: ${vehicleId}`);
         
         // Lógica de eliminación: filtramos la lista para quitar el usuario
         try{
-            console.log(`antes vehiculo con ID: ${vehicleId}`);
+            console.log(`antes vehículo con ID: ${vehicleId}`);
             const res = await apiClient.del('/vehicleId', { 
                     body: vehicleId
                         }) ;
@@ -110,7 +110,7 @@ const TableSelectionComponent = (props) => {
                 {/* Renderizado condicional del modal */}
                 {isModalOpen && (
                     <ConfirmacionComponent
-                    message={`¿Estás seguro de que quieres eliminar al vehiculo con ID ${vehicleId}?`}
+                    message={`¿Estás seguro de que quieres eliminar al vehículo con ID ${vehicleId}?`}
                     onConfirm={handleConfirmDelete}
                     onCancel={handleCloseModal}
                     />

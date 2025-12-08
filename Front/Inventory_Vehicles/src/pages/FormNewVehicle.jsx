@@ -37,7 +37,7 @@ const FormNewVehicle = () =>{
         const controlador = new AbortController();
         const senal = controlador.signal;
 
-        // Recuperar información del vehiculo
+        // Recuperar información del vehículo
         const fetchVehicules = async() => {
             try{
             const res = await apiClient.post('/vehicleId', {  
@@ -76,7 +76,7 @@ const FormNewVehicle = () =>{
     setPlate(event.target.value)};
 
     const handleInputState = (event) =>{
-        console.log("event",event);
+        
     setState(event.target.value)};
 
     const handleSubmit = async(event) => {  
@@ -105,14 +105,14 @@ const FormNewVehicle = () =>{
             const resPost = await apiClient.post('/vehicle', {body: vehicle});
             if(resPost.status == 'error'){
             setIsShowAlert(true)
-            setMensajeAlerta('Existió un problema al validar el vehiculo, intenta de nuevo');
+            setMensajeAlerta('Existió un problema al validar el vehículo, intenta de nuevo');
             setTipoAlerta('error');
             console.log('Problemas con el servidor de bd');
             setisSpinner(false);
 
         } else if(resPost.status == 'success'){
             setIsShowAlert(true)
-            setMensajeAlerta('Vehiculo Registrado !');
+            setMensajeAlerta('vehículo Registrado !');
             setTipoAlerta('success');
             setisSpinner(false);
             cleanForm();
@@ -121,14 +121,14 @@ const FormNewVehicle = () =>{
             const resPut = await apiClient.put('/vehicleId', {body: vehicle});
             if(resPut.status == 'error'){
             setIsShowAlert(true)
-            setMensajeAlerta('Existió un problema al validar el vehiculo, intenta de nuevo');
+            setMensajeAlerta('Existió un problema al validar el vehículo, intenta de nuevo');
             setTipoAlerta('error');
             console.log('Problemas con el servidor de bd');
             setisSpinner(false);
 
         } else if(resPut.status == 'success'){
             setIsShowAlert(true)
-            setMensajeAlerta('Vehiculo Actualizado !');
+            setMensajeAlerta('vehículo Actualizado !');
             setTipoAlerta('success');
             setisSpinner(false);
             cleanForm();
@@ -171,7 +171,7 @@ const FormNewVehicle = () =>{
 
     return(
         <>
-            <Title title={'Agregar / Modificar Vehiculo '  } icon={<FontAwesomeIcon className='text-5xl text-white
+            <Title title={'Agregar / Modificar vehículo '  } icon={<FontAwesomeIcon className='text-5xl text-white
                 ' icon='fa-solid fa-car'  />}/>
 
                 <div className='pt-5'>
@@ -206,7 +206,7 @@ const FormNewVehicle = () =>{
                          hover:bg-white hover:text-cyan-800 text-white
                                  placeholder:text-cyan-600 rounded shadow-lg shadow-cyan-600">                                    
                                     <FontAwesomeIcon icon='fa-solid fa-floppy-disk' className='text-2xl  px-2'/>
-                                    {isSpinner ? 'Registrando vehiculo ...' : 'Guardar '}
+                                    {isSpinner ? 'Registrando vehículo ...' : 'Guardar '}
                         </button> 
                 </form> 
         </>

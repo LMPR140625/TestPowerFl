@@ -50,7 +50,7 @@ const corsOptions = {
 
 
 // Prod
-app.use(cors()); // Enable CORS with specified options
+app.use(cors()); 
 
 // Registro de peticion logs
 app.use(morgan('dev'));
@@ -65,10 +65,7 @@ app.use('/api',vehicleRoutes);
 app.get("/", (req, res) => {
     res.send("Hello, World !!!!!!!!!");
 }); 
-/*
-app.all('*',(req,res,next) => {
-  next(new AppError(`No se puede encontrar ${req.originalUrl} en este servidor`,404));
-});*/
+
 
 app.use(errorHandler);
 
