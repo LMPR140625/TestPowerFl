@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout'; // Asumiendo que existe src/layouts/MainLayout.jsx
 // Importaciones de páginas
@@ -39,9 +39,10 @@ const queryClient = new QueryClient({
   },
 });
 function App() {
-
+  const [token, setToken ] = useState(false);
 
   useEffect(() =>{
+    
     AOS.init({
       duration:800,
       once:true
@@ -52,14 +53,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
     <Routes>
-      <Route path='/' element={<MainLayout/>}>
+      <Route path='/login' element={<Login/>} />
+      <Route path='/' element={token ?  <MainLayout/> : <Login/>}>
         <Route index element={<HomePage/>} />
+        <Route path='/home' element={<HomePage/>} />
         <Route path='/newVehicle/:vehicleId' element={<FormVehicle/>} />
         <Route path='/listVehicle' element={<ListVehicles/>} />
         <Route path='/detailVehicle' element={<DetailVehicles/>} />
       </Route>
 
-      <Route path='/login' element={<Login/>} />
+      
     </Routes>
     </QueryClientProvider>
   )

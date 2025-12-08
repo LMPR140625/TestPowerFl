@@ -32,7 +32,7 @@ console.log("resultado de isMatch", isMatch)
     // Clave secreta (debe ser privada)
     secretKey,
     // Opciones: Define la expiración del token
-    { expiresIn: '24h' } // El token expira en 1 hora
+    { expiresIn: '5m' } // El token expira en 5 minutos
   );
 
   return token;

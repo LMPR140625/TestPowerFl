@@ -30,7 +30,7 @@ const Login = () => {
        onSuccess: (res) => {
         if(res.data != null){
           localStorage.setItem('apiToken', res.data);
-          navigate('/');  // Redirige al usuario a la ruta '/' después del login exitoso
+          navigate('/home');  // Redirige al usuario a la ruta '/' después del login exitoso
         } else  {
           setIsShowAlert(true)
           setMensajeAlerta('Usuario y/o contraseña incorrecta.');
